@@ -1,5 +1,5 @@
 // client/src/App.jsx
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
 import { Play, Loader2, Terminal, ChevronDown, Clock, MemoryStick } from "lucide-react";
@@ -24,6 +24,11 @@ export default function App() {
   const [isDark, setIsDark] = useState(true);
   const [showStdin, setShowStdin] = useState(false);
   const pollRef = useRef(null);
+  useEffect(() => {
+  return () => {
+    if (pollRef.current) clearInterval(pollRef.current);
+  };
+}, []);
 
   const handleLangChange = (newLang) => {
     setLang(newLang);

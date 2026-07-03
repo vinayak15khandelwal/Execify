@@ -127,7 +127,7 @@ npm run dev
 - User authentication
 - Submission history
 - Custom test cases
-- 
+- Code sharing
 - Contest mode
 - Kubernetes deployment
 - WebSocket live execution
